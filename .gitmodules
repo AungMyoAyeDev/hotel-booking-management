@@ -1,0 +1,9 @@
+[submodule "hotel-booking"]
+	path = hotel-booking
+	url = https://github.com/AungMyoAye101/hotel-booking.git
+[submodule "booking-dashboard"]
+	path = booking-dashboard
+	url = https://github.com/AungMyoAye101/booking-dashboard.git
+[submodule "hotel-booking-backend"]
+	path = hotel-booking-backend
+	url = https://github.com/AungMyoAye101/hotel-booking-backend.git
