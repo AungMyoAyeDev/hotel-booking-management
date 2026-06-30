@@ -2,15 +2,17 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  Index,
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { BedTypes } from '../../common/types/type';
+import { BedTypes } from '../../common/types';
 import { Hotel } from '../../hotels/entities/hotel.entity';
 import { Booking } from '../../bookings/entities/booking.entity';
 
+@Index(['bed_type', 'createdAt'])
 @Entity('rooms')
 export class Room {
   @PrimaryGeneratedColumn('uuid')
@@ -21,6 +23,8 @@ export class Room {
 
   @Column({
     type: 'decimal',
+    precision: 10,
+    scale: 2,
   })
   price!: number;
 

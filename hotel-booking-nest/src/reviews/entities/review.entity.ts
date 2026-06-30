@@ -2,6 +2,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  Index,
   ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -17,6 +18,7 @@ export class Review {
   @Column()
   star!: number;
 
+  @Index()
   @CreateDateColumn()
   createdAt?: Date;
 

@@ -2,13 +2,16 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  Index,
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { HotelTypes } from '../../common/types/type';
-import { Room } from '../../rooms/entities/room.entity';
 
+import { Room } from '../../rooms/entities/room.entity';
+import { HotelTypes } from '../../common/types';
+
+@Index(['name', 'price', 'createdAt'])
 @Entity('hotels')
 export class Hotel {
   @PrimaryGeneratedColumn('uuid')
@@ -33,16 +36,15 @@ export class Hotel {
   @Column()
   address!: string;
 
-  @Column()
-  amentites!: string;
-
   @Column({
     type: 'int',
   })
   rating!: string;
 
   @Column({
-    type: 'array',
+    type: 'text',
+    array: true,
+    default: [],
   })
   amentities!: string[];
 

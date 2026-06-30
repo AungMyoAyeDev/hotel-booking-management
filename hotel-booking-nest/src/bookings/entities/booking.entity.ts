@@ -7,7 +7,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { User } from '../../users/entities/user.entity';
-import { BookingTypes } from '../../common/types/type';
+import { BookingTypes } from '../../common/types';
 import { Room } from '../../rooms/entities/room.entity';
 
 @Entity('bookings')

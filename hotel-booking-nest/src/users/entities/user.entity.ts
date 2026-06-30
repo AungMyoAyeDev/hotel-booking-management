@@ -8,7 +8,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Role } from '../../common/types/type';
+import { Role } from '../../common/types';
 import { Review } from '../../reviews/entities/review.entity';
 import { Booking } from '../../bookings/entities/booking.entity';
 
@@ -22,10 +22,10 @@ export class User {
   })
   name!: string;
 
-  @Index()
-  @Column({
+  @Index({
     unique: true,
   })
+  @Column()
   email!: string;
 
   @Column()
@@ -50,6 +50,7 @@ export class User {
   @Column()
   token?: string;
 
+  @Index()
   @CreateDateColumn()
   createdAt?: Date;
 
